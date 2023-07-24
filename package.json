@@ -1,6 +1,6 @@
 {
-  "name": "@mqrcups/browser",
-  "version": "1.0.0",
+  "name": "@urobin84/mqrcups-browser",
+  "version": "0.0.1",
   "description": "mqrcups browser library",
   "type": "module",
   "scripts": {
@@ -11,7 +11,7 @@
     "build": "rollup -c",
     "clean": "rm -rf dist",
     "parcel:clean": "rm -rf .parcel-cache",
-    "prepare": "npm run build && npm run build:global && npm run build:types"
+    "prepare": "husky install"
   },
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -56,5 +56,17 @@
     "@swc/helpers": "^0.5.1",
     "axios": "^1.4.0",
     "phoenix": "^1.7.7"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,js,json}": "prettier --write",
+    "*.ts": [
+      "eslint -c .eslintrc.ts.js --fix",
+      "tsc"
+    ]
   }
 }
