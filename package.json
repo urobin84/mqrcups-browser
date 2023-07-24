@@ -1,0 +1,60 @@
+{
+  "name": "@mqrcups/browser",
+  "version": "1.0.0",
+  "description": "mqrcups browser library",
+  "type": "module",
+  "scripts": {
+    "start": "parcel watch src/global.ts",
+    "tsc": "tsc",
+    "build:global": "parcel build src/global.ts",
+    "build:types": "tsc --declaration true --emitDeclarationOnly true --declarationDir dist",
+    "build": "rollup -c",
+    "clean": "rm -rf dist",
+    "parcel:clean": "rm -rf .parcel-cache",
+    "prepare": "npm run build && npm run build:global && npm run build:types"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
+  "unpkg": "dist/index.js",
+  "engines": {
+    "node": ">=8",
+    "npm": ">=5"
+  },
+  "files": [
+    "dist/*"
+  ],
+  "author": "urobin84@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.22.9",
+    "@babel/preset-env": "^7.22.9",
+    "@rollup/plugin-commonjs": "^25.0.3",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@rollup/plugin-typescript": "^11.1.2",
+    "@types/axios": "^0.14.0",
+    "@types/phoenix": "^1.6.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^29.6.1",
+    "eslint": "^8.45.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "husky": "^8.0.3",
+    "jest": "^29.6.1",
+    "jsdom": "^22.1.0",
+    "jsdom-global": "^3.0.2",
+    "lint-staged": "^13.2.3",
+    "localStorage": "^1.0.4",
+    "parcel": "^2.9.3",
+    "prettier": "^3.0.0",
+    "rollup": "^3.26.2",
+    "sinon": "^15.2.0",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "@swc/helpers": "^0.5.1",
+    "axios": "^1.4.0",
+    "phoenix": "^1.7.7"
+  }
+}
